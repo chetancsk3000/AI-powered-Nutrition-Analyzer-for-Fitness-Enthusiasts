@@ -21,7 +21,7 @@ def predict():
     file = request.files["image"]
 
     try:
-        img = load_img(file, target_size=(100, 100))
+        img = load_img(file.stream, target_size=(100, 100))  # ✅ use .stream
         img_array = img_to_array(img) / 255.0
         img_array = np.expand_dims(img_array, axis=0)
 
