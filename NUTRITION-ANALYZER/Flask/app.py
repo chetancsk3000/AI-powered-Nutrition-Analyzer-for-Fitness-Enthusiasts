@@ -21,7 +21,8 @@ def predict():
     file = request.files["image"]
 
     try:
-        img = load_img(file.stream, target_size=(100, 100))  # ✅ use .stream
+        import io
+        img = load_img(io.BytesIO(file.read()), target_size=(100, 100))
         img_array = img_to_array(img) / 255.0
         img_array = np.expand_dims(img_array, axis=0)
 
@@ -37,8 +38,9 @@ def predict():
 
     except Exception as e:
         import traceback
-        traceback.print_exc()  # <--- this will print full error in Render logs
+        traceback.print_exc()
         return jsonify({"error": str(e)}), 500
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
