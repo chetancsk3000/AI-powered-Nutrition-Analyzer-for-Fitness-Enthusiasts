@@ -36,6 +36,8 @@ def predict():
         })
 
     except Exception as e:
+        import traceback
+        traceback.print_exc()  # <--- this will print full error in Render logs
         return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
