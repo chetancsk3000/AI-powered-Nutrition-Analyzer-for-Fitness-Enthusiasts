@@ -8,4 +8,3 @@ services:
     buildCommand: ""
     startCommand: "python app.py"
     runtime: python
-    pythonVersion: 3.10.12
