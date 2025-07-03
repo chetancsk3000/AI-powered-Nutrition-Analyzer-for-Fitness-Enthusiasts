@@ -1,0 +1,275 @@
+html,
+body {
+  color: white;
+  background-color: black;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+}
+
+.wrap {
+  height: 100%;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 80px;
+}
+
+.sec {
+  scroll-margin-top: 80px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3vh;
+  text-align: justify;
+  scroll-snap-align: start;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.sec.on {
+  opacity: 1;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover:not(:disabled) {
+  transform: scale(1.03);
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.card {
+  padding: 2em;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(77, 77, 77, 0.749);
+  border-bottom: 1px solid gray;
+  backdrop-filter: blur(8px);
+  padding: 0 1rem;
+  height: 60px;
+}
+
+.left,
+.right {
+  display: flex;
+  gap: 1rem;
+}
+
+.header button {
+  border: none;
+  height: 100%;
+  background-color: transparent;
+  color: white;
+  min-width: 8vw;
+  font-size: 1rem;
+}
+
+.header button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+.back {
+  background-color: black;
+  color: white;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.scroll-sections {
+  height: 100%;
+}
+
+.feature {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 500px;
+  text-align: justify;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  height: fit-content;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 999;
+  color: white;
+  background-color: rgba(77, 77, 77, 0.749);
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.footer a {
+  text-decoration: none;
+  color: white;
+}
+
+.fade-section {
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+/* Form container shared */
+.a,
+.signup-container,
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+/* Inputs and button shared */
+.a input,
+.signup-card input,
+.login-card input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.a button,
+.signup-card button,
+.login-card button {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px;
+  margin-top: 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.a button:disabled,
+.signup-card button:disabled,
+.login-card button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.signup-container {
+  background: linear-gradient(135deg, #e0f7fa, #e1bee7);
+}
+
+.login-container {
+  background: linear-gradient(135deg, #fce4ec, #e3f2fd);
+}
+
+.signup-card,
+.login-card {
+  background-color: white;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.signup-card h2,
+.login-card h2 {
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.signup-card button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.signup-card button:hover:not(:disabled) {
+  background-color: #43a047;
+}
+
+.login-card button {
+  background-color: #1e88e5;
+  color: white;
+}
+
+.login-card button:hover:not(:disabled) {
+  background-color: #1565c0;
+}
+
+.msg {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #e53935;
+  text-align: center;
+}
+
+.login-link,
+.signup-link {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}
+
+.login-link span,
+.signup-link span {
+  color: #4caf50;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.login-link span:hover,
+.signup-link span:hover {
+  text-decoration: underline;
+}
+
+/* Responsive input/button widths */
+@media (max-width: 600px) {
+  .a input,
+  .a button {
+    width: 90vw;
+  }
+
+  .feature {
+    width: 90%;
+    height: auto;
+  }
+}
