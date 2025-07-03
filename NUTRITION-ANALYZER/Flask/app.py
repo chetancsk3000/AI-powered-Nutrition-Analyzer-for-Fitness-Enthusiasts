@@ -8,11 +8,9 @@ from tensorflow.keras.preprocessing.image import load_img, img_to_array
 app = Flask(__name__)
 CORS(app)
 
-# Load the model (make sure the .h5 file is in the same folder as this app.py)
 MODEL_PATH = os.path.join(os.path.dirname(__file__), "model_mobilenetv2.h5")
 model = load_model(MODEL_PATH)
 
-# Class labels in the same order as used during training
 class_names = ['APPLES', 'BANANA', 'ORANGE', 'PINEAPPLE', 'WATERMELON']
 
 @app.route("/predict", methods=["POST"])
