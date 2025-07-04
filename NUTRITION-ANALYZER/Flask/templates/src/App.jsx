@@ -5,6 +5,7 @@ import './App.css'
 import Signup from './Signup';
 import Login from './Login';
 import PredictPage from './PredictPage'
+import History from './History';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/predict" element={<PredictPage />} />
+        <Route path="/history" element={<History />} />
       </Routes>
     </Router>
   );
